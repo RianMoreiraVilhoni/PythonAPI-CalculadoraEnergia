@@ -3,9 +3,9 @@ from peewee import AutoField, CharField, FloatField, Model
 from config.database import database
 
 class BandeiraDB(Model):
-    id = AutoField(column_name='bandeira_id')
-    nome = CharField(column_name='bandeira_nome')
-    tarifa = CharField(column_name='bandeira_tarifa')
+    id = AutoField()
+    nome = CharField()
+    tarifa = CharField()
 
     class Meta:
         database = database

@@ -1,14 +1,18 @@
 from pydantic import BaseModel
 
+
 class TipoDispositivoCreate(BaseModel):
-    nombre: str
+    nome: str
+
 
 class TipoDispositivoUpdate(BaseModel):
-    nombre: str
+    nome: str
+
 
 class TipoDispositivoRead(BaseModel):
     id: int
-    nombre: str
+    nome: str
+
 
 class TipoDispositivoReadList(BaseModel):
-    tipos_dispositivo: list[TipoDispositivoRead]
+    tipos_dispositivos: list[TipoDispositivoRead]

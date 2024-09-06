@@ -1,17 +1,16 @@
-from peewee import AutoField, CharField, FloatField, Model, ForeignKeyField
+from peewee import AutoField, CharField, ForeignKeyField, Model
 
 from config.database import database
 from models.tipo_consumidor import TipoConsumidorDB
 
+
 class UnidadeConsumidoraDB(Model):
-    id = AutoField(column_name='unidade_consumidora_id')
-    nombre = CharField(column_name='unidade_consumidor_nome')
+    id = AutoField()
+    nome = CharField()
     tipo = ForeignKeyField(
-        column_name='unidade_consumidor_tipo_id',
-        model=TipoConsumidorDB,
-        backref='unidade_consumidora',
+        model=TipoConsumidorDB, backref='unidades_consumidoras'
     )
 
     class Meta:
         database = database
-        table_name = 'unidade_consumidora'
+        table_name = 'unidades_consumidoras'

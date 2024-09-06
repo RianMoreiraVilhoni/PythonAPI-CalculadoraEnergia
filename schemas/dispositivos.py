@@ -12,8 +12,8 @@ class DispositivoCreate(BaseModel):
 
 class DispositivoUpdate(BaseModel):
     nome: str
-    consumo: float = Field(gt=0)
-    uso_diario: float = Field(ge=0, le=24)
+    consumo: int = Field(gt=0)
+    uso_diario: int = Field(ge=0, le=24)
     tipo_id: int
 
 
