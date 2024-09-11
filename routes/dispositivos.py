@@ -12,7 +12,10 @@ from schemas.dispositivos import (
 
 router = APIRouter(prefix='/dispositivos', tags=['DISPOSITIVOS'])
 
-
+@router.get(path='', response_model=DispositivoReadList)
+def listar_dispositivos():
+    dispositivos = DispositivoDB.select()
+    return {'dispositivos': dispositivos}
 @router.post(path='', response_model=DispositivoRead)
 def criar_dispositivo(novo_dispositivo: DispositivoCreate):
     dispositivo = DispositivoDB.create(**novo_dispositivo.model_dump())
